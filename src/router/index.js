@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Index from '@/components/index/Index.vue'
-import Details from '@/components/index/Details.vue'
-import Search from '@/components/index/Search'
+import LoginNews from "@/components/login/LoginNews"
+import ListNews from "@/components/list/ListNews"
+import PersinfoNews from "@/components/persinfo/PersinfoNews"
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -14,19 +16,20 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/index',
-      name: 'Index',
-      component: Index
+      path: '/news/login',
+      name: 'LoginNews',
+      component: LoginNews
     },
     {
-      path: '/details',
-      name: 'Details',
-      component: Details
+      path: '/news/list',
+      name: 'ListNews',
+      component: ListNews
     },
     {
-      path: '/search',
-      name: 'Search',
-      component: Search
-    }
+      path: '/news/persinfo',
+      name: 'PersinfoNews',
+      component: PersinfoNews
+    },
+
   ]
 })
