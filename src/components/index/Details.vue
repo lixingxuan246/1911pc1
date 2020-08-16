@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="micronews">
     <div class="micronews-header-wrap">
       <div class="micronews-header w1000 layui-clear">
         <h1 class="logo">
