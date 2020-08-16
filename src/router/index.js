@@ -4,7 +4,9 @@ import HelloWorld from '@/components/HelloWorld'
 import LoginNews from "@/components/login/LoginNews"
 import ListNews from "@/components/list/ListNews"
 import PersinfoNews from "@/components/persinfo/PersinfoNews"
-
+import Index from '@/components/index/Index.vue'
+import Details from '@/components/index/Details.vue'
+import Search from '@/components/index/Search'
 
 Vue.use(Router)
 
@@ -30,6 +32,21 @@ export default new Router({
       name: 'PersinfoNews',
       component: PersinfoNews
     },
+    {
+      path: '/index',
+      name: 'Index',
+      component: Index
+    },
+    {
+      path: '/details',
+      name: 'Details',
+      component: Details
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
+    }
 
   ]
 })
