@@ -5,6 +5,9 @@ import LoginNews from "@/components/login/LoginNews"
 import ListNews from "@/components/list/ListNews"
 import PersinfoNews from "@/components/persinfo/PersinfoNews"
 import Red from '@/components/index/Red'
+import Index from "@/components/index/Index";
+import Details from "@/components/index/Details";
+import Search from "@/components/index/Search";
 
 
 Vue.use(Router)
