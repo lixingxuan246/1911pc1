@@ -415,8 +415,19 @@
       },
       yule: function(){
         this.$router.push({name: 'Details'})
-      }
+      },
+
+
     },
+    mounted(){
+          layui.use('index',function(){
+            var index = layui.index;
+            index.banner()
+            index.seachBtn()
+            index.arrowutil()
+          });
+          layui.layer.alert(12345,{icon:6})
+    }
 
     }
 </script>
