@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import LoginNews from "@/components/login/LoginNews"
 import ListNews from "@/components/list/ListNews"
 import PersinfoNews from "@/components/persinfo/PersinfoNews"
+import Red from '@/components/index/Red'
 
 
 Vue.use(Router)
@@ -30,7 +31,11 @@ export default new Router({
       path: '/news/persinfo',
       name: 'PersinfoNews',
       component: PersinfoNews
-    },
+    },{
+      path: '/Red',
+      name: 'Red',
+      component: Red
+    }
 
   ]
 })
