@@ -4,9 +4,16 @@ import HelloWorld from '@/components/HelloWorld'
 import LoginNews from "@/components/login/LoginNews"
 import ListNews from "@/components/list/ListNews"
 import PersinfoNews from "@/components/persinfo/PersinfoNews"
+<<<<<<< HEAD
 import Index from "@/components/index/Index"
 import Details from "@/components/index/Details"
 import Search from "@/components/index/Search"
+=======
+import Red from '@/components/index/Red'
+import Index from "@/components/index/Index";
+import Details from "@/components/index/Details";
+import Search from "@/components/index/Search";
+>>>>>>> a846cc04c084d34c55fc2a59343f25f47c19c056
 
 
 Vue.use(Router)
@@ -34,6 +41,7 @@ export default new Router({
       name: 'PersinfoNews',
       component: PersinfoNews
     },{
+<<<<<<< HEAD
       path: '/index',
       name: 'Index',
       component: Index
@@ -45,6 +53,11 @@ export default new Router({
       path: '/details',
       name: 'Details',
       component: Details
+=======
+      path: '/Red',
+      name: 'Red',
+      component: Red
+>>>>>>> a846cc04c084d34c55fc2a59343f25f47c19c056
     }
 
   ]
