@@ -416,16 +416,16 @@
         this.$router.push({name: 'Search'})
       },
       yule: function(){
-        this.$router.push({name: 'Details'})
+        this.$router.push({name: 'ListNews'})
       },
       shenghuo:function(){
-        this.$router.push({name: ''})
+        this.$router.push({name: 'PersinfoNews'})
       },
       junshi:function(){
-        this.$router.push({name: ''})
+        this.$router.push({name: 'PersinfoNews'})
       },
       caijing:function(){
-        this.$router.push({name: ''})
+        this.$router.push({name: 'Details'})
       }
 
 

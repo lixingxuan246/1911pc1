@@ -1,5 +1,5 @@
 <template>
-  <div class="micronews">
+  <div>
     <div class="micronews-header-wrap">
       <div class="micronews-header w1000 layui-clear">
         <h1 class="logo">
@@ -9,12 +9,20 @@
           </a>
         </h1>
         <p class="nav">
-          <a href="index.html">最新</a>
-          <a href="list.html"  class="active">娱乐</a>
-          <a href="list.html">生活</a>
-          <a href="list.html">财经</a>
-          <a href="list.html">科技</a>
-          <a href="list.html">军事</a>
+<!--          <a href="index.html">最新</a>-->
+<!--          <a href="list.html"  class="active">娱乐</a>-->
+<!--          <a href="list.html">生活</a>-->
+<!--          <a href="list.html">财经</a>-->
+<!--          <a href="list.html">科技</a>-->
+<!--          <a href="list.html">军事</a>-->
+
+          <route-lick @click="shouye()">首页</route-lick><route-lick @click="yule()">娱乐</route-lick>
+          <route-lick @click="shenghuo()">生活</route-lick>
+          <route-lick @click="caijing()">财经</route-lick>
+
+          <!--         <a href="list.html">科技</a>-->
+          <route-lick @click="keji()">科技</route-lick>
+          <route-lick @click="junshi()">军事</route-lick>
         </p>
         <div class="search-bar">
           <form class="layui-form" action="">
@@ -261,8 +269,38 @@
   import "@/assets/layui/css/layui.css";
   import "@/assets/static/css/main.css";
     export default {
-        name: "Detaile.vue"
+        name: "Detaile.vue",
+      data(){
+          return {
+
+          }
+      },
+      methods:{
+          shouye:function(){
+            this.$router.push({name:'Index'})
+          },
+        keji: function () {
+          // 通过路由跳转的方式实现页面跳转
+          this.$router.push({name: 'Search'})
+        },
+        yule: function(){
+          this.$router.push({name: 'ListNews'})
+        },
+        shenghuo:function(){
+          this.$router.push({name: 'PersinfoNews'})
+        },
+        junshi:function(){
+          this.$router.push({name: 'PersinfoNews'})
+        },
+        caijing:function(){
+          this.$router.push({name: 'Details'})
+        }
+
+
+      },
     }
+
+
 </script>
 
 <style scoped>
