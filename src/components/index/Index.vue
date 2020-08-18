@@ -403,7 +403,6 @@
       return {
       }
     },
-<<<<<<< HEAD
     methods:{
       keji: function () {
         // 通过路由跳转的方式实现页面跳转
@@ -425,16 +424,6 @@
           layui.layer.alert(12345,{icon:6})
     }
 
-=======
-    mounted(){
-      layui.use('index',function(){
-        var index = layui.index;
-        index.banner()
-        index.seachBtn()
-        index.arrowutil()
-      });
->>>>>>> a846cc04c084d34c55fc2a59343f25f47c19c056
-    }
   }
 </script>
 
