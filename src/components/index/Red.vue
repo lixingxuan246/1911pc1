@@ -63,13 +63,15 @@
             <div class="layui-form-item">
               <div class="layui-input-block">
                 <input type="text"  name="" lay-verify="required" id="imgCode" v-model="yzm" placeholder="验证码" autocomplete="off" class="layui-input">
-                <img src="https://fly.layui.com/auth/imagecode?t=1542856673772">
+<!--                <img src="https://fly.layui.com/auth/imagecode?t=1542856673772">-->
+                <img :src="img_code" @click="changeImgCode()">
+
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
                 <input type="text"  name="" lay-verify="required" v-model="dxyzm" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
-                <input type="button"  id="veriCodeBtn" name="" value="验证码" @click="dx" class="obtain layui-btn">
+                <input type="button"  id="veriCodeBtn" name="" @click="getMsgCode"  class="obtain layui-btn" value="验证码">
               </div>
             </div>
             <div class="layui-form-item">
@@ -124,9 +126,13 @@
     name: 'LoginNews',
     data () {
       return {
+        img_code:"",
         phone:'',
         yzm:'',
         dxyzm:'',
+        sendMark:1,
+        Timecode:'验证码',
+
       }
     },
     methods:{
@@ -163,6 +169,55 @@
 
 
       },
+      changeImgCode:function(){
+        this.img_code = this.img_code + '?rand=' +Math.random();
+      },
+      getMsgCode:function(){
+        if(this.phone==''){
+          alert('请输入你的手机号');
+          return false;
+        }
+        var reg=/^1{1}\d{10}$/;
+        if(!reg.test(this.phone)){
+          alert('手机号不正确');
+          return false;
+        }
+        if(this.user_code==''){
+          alert('请输入图片验证码');
+          return false;
+        }
+        let api_req={
+          sid:this.sid,
+          user_img_code:this.user_img_code,
+          phone:this.phone,
+          type:1
+        }
+        //调用短信发送接口
+        this.$http.post('/api/sendMsgCode',api_req).then(success=>{
+          if(success.body.status!=200){
+            alert(success.body.msg);
+          }else{
+            this.changeImgCode();
+            this.countDown();
+          }
+        },error=>{
+          alert('短信发送失败，请重试');
+          return false;
+        });
+      },
+      CountDown:function(){
+        this.sendMark=0;
+        this.TimeCode=59;
+        let _this=this;
+        let int_val=setInterval(function(){
+          _this.TimeCode--;
+          if(_this.TimeCode<1){
+            _this.TimeCode='验证码';
+            _this.sendMark=1;
+            clearInterval(int_val)
+          }
+        },1000)
+      },
       dx:function () {
         if(this.phone ==''){
           alert('手机号不能为空');
@@ -180,6 +235,15 @@
           console.log(error);
         })
       }
-    }
+    },
+    mounted(){
+        this.$http.get('/api/getImgUrl').then(success=>{
+
+            console.log(success);
+            this.img_code = success.body.data.url;
+        },error=>{
+          alert("请求失败，请重试")
+        })
+    },
   }
 </script>
