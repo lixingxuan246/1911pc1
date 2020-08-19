@@ -65,7 +65,7 @@
           <div class="layui-col-xs12 layui-col-sm12 layui-col-md8">
             <div class="main">
               <div class="title">
-                <h3>王健林29亿出售美国加州地块</h3>
+                <h3>王健林29亿出售美国加州地块ok</h3>
                 <div class="b-txt">
                   <span class="label">财经</span>
                   <span class="icon">

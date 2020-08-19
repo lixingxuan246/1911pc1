@@ -62,7 +62,7 @@
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="text"  name="" lay-verify="required" id="imgCode" v-model="yzm" placeholder="验证码" autocomplete="off" class="layui-input">
+                <input type="text"  name="" lay-verify="required" id="imgCode" v-model="user_img_code" placeholder="验证码" autocomplete="off" class="layui-input">
 <!--                <img src="https://fly.layui.com/auth/imagecode?t=1542856673772">-->
                 <img :src="img_code" @click="changeImgCode()">
 
@@ -70,18 +70,25 @@
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="text"  name="" lay-verify="required" v-model="dxyzm" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
-                <input type="button"  id="veriCodeBtn" name="" @click="getMsgCode"  class="obtain layui-btn" value="验证码">
+                <input type="text"  name="" lay-verify="required"  placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
+                <input type="button"  id="veriCodeBtn" name=""
+                       v-if="sendMark"
+                       @click="getMsgCode"  class="obtain layui-btn" :value="Timecode">
+                <input type="button" name=""
+                    :value="Timecode"
+                       v-else
+                       class="obtain layui-btn"
+                >
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="password" name="" lay-verify="required|phone" id="" v-model="phone" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                <input type="password" name="" lay-verify="required|phone"  v-model="pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="password" name="" lay-verify="required|phone" id="" v-model="phone" placeholder="确认密码" autocomplete="off" class="layui-input">
+                <input type="password" name="" lay-verify="required|phone"  v-model="pwd1" placeholder="确认密码" autocomplete="off" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item agreement">
@@ -128,11 +135,14 @@
       return {
         img_code:"",
         phone:'',
-        yzm:'',
+        user_img_code:'',
         dxyzm:'',
         sendMark:1,
         Timecode:'验证码',
-
+        user_code:'',
+        MsgCode:'验证码',
+        pwd:'',
+        pwd1:''
       }
     },
     methods:{
@@ -145,7 +155,7 @@
           alert('验证码不能为空');
           return false
         }
-        if(this.dxyzm ==''){
+        if(this.user_code ==''){
           alert('短信验证码不能为空');
           return false
         }
@@ -179,10 +189,11 @@
         }
         var reg=/^1{1}\d{10}$/;
         if(!reg.test(this.phone)){
+
           alert('手机号不正确');
           return false;
         }
-        if(this.user_code==''){
+        if(this.user_img_code==''){
           alert('请输入图片验证码');
           return false;
         }
@@ -192,8 +203,10 @@
           phone:this.phone,
           type:1
         }
+
         //调用短信发送接口
         this.$http.post('/api/sendMsgCode',api_req).then(success=>{
+          // alert('成功');
           if(success.body.status!=200){
             alert(success.body.msg);
           }else{
@@ -241,6 +254,7 @@
 
             console.log(success);
             this.img_code = success.body.data.url;
+            this.sid = success.body.data.sid;
         },error=>{
           alert("请求失败，请重试")
         })

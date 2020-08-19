@@ -440,11 +440,9 @@
           layui.layer.alert(12345,{icon:6})
     }
 
-<<<<<<< HEAD
-  }
-=======
+  
     }
->>>>>>> lxx
+
 </script>
 
 <style scoped>
