@@ -4,7 +4,7 @@
     <div class="micronews-header w1000 layui-clear">
       <h1 class="logo">
         <a href="index.html">
-          <img src="astatic/images/LOGO.png" alt="logo">
+          <img src="@/assets/static/images/LOGO.png" alt="logo">
           <span class="layui-hide">LOGO</span>
         </a>
       </h1>
@@ -389,7 +389,7 @@
         </a>
       </div>
     </div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -398,18 +398,19 @@
   import "@/assets/layui/css/layui.css";
   import "@/assets/static/css/main.css";
   export default {
-        name: "Index.vue",
+        name: "Index",
     data () {
       return {
       }
     },
     mounted(){
-      layui.use('index',function(){
-        var index = layui.index;
-        index.banner()
-        index.seachBtn()
-        index.arrowutil()
-      });
+
+      // layui.use('index',function(){
+      //   var index = layui.index;
+      //   index.banner()
+      //   index.seachBtn()
+      //   index.arrowutil()
+      // });
     }
   }
 </script>

@@ -14,7 +14,7 @@ module.exports = {
       // 请求带api的全部按照一下规则处理
       '/api':{
         // 转发到该域名
-        target: 'http://api3.mazhanliang.top',
+        target: 'http://api4.mazhanliang.top',
         // 开启代理
         changeOrigin: true,
         pathRewrite: {
@@ -25,7 +25,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: '0.0.0.0', // can be overwritten by process.env.HOST
-    port: 3030, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 2020, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

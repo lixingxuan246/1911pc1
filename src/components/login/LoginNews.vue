@@ -27,8 +27,8 @@
           </form>
         </div>
         <div class="login">
-          <a href="login.html">
-            登录
+          <a href="#">
+            注册
           </a>
           <!-- <a href="login.html"> -->
           <!-- <img src="@/assets/static/images/header.png" style="width: 36px; height: 36px;"> -->
@@ -57,31 +57,23 @@
           <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="text" name="" lay-verify="required|phone" id="phone" v-model="phone" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+                <input type="text" name="" lay-verify="required|phone"  v-model="phone" placeholder="请输入手机号" autocomplete="off" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="text"  name="" lay-verify="required" id="imgCode" v-model="yzm" placeholder="验证码" autocomplete="off" class="layui-input">
-                <img src="https://fly.layui.com/auth/imagecode?t=1542856673772">
-              </div>
-            </div>
-            <div class="layui-form-item">
-              <div class="layui-input-block">
-                <input type="text"  name="" lay-verify="required" v-model="dxyzm" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
-                <input type="button"  id="veriCodeBtn" name="" value="验证码" @click="dx" class="obtain layui-btn">
-              </div>
-            </div>
-            <div class="layui-form-item agreement">
-              <div class="layui-input-block">
-                <input type="checkbox" name="like1[write]" lay-verify="required" lay-skin="primary" title="我已阅读并同意" checked="">
-                <span class="txt"><a href="#">用户协议</a>和<a  href="#">隐私条款</a></span>
+                <input type="password" name="" lay-verify="required|phone"  v-model="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
 
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="*" onclick="return false" @click="login">登录</button>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="*" onclick="return false" @click="gotoPage('Red')">去注册</button>
               </div>
             </div>
             <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
@@ -106,70 +98,59 @@
 
 
 <script>
-
-  import "@/assets/layui/layui.js"
   import "@/assets/layui/css/layui.css"
   import "@/assets/static/css/main.css"
+  import Common from '@/mixins/common.js'
   export default {
   name: 'LoginNews',
   data () {
     return {
-      phone:'',
-      yzm:'',
-      dxyzm:'',
+      phone:'12345678900',
+      password:'',
     }
   },
+ mixins:[Common],
   methods:{
     login:function () {
-      if(this.phone ==''){
-        alert('手机号不能为空');
-        return false
+      if(this.phone == ''){
+        alert('请输入手机号')
+        // this.alert('请输入手机号');
+        return false;
       }
-      if(this.yzm ==''){
-        alert('验证码不能为空');
-        return false
+      let reg = /^1{1}\d{10}$/;
+      if(!reg.test(this.phone)){
+        alert('手机号码格式不正确');
+        return false;
       }
-      if(this.dxyzm ==''){
-        alert('短信验证码不能为空');
-        return false
+      // if( this.(this.phone)){
+        // this.msg('手机号码格式不正确');
+        // return false;
+      // }
+      if(this.password == ''){
+        alert('请输入密码');
+        // this.msg('请输入密码');
+        return false;
       }
-      this.$http.post('/api/login',{
+      if(this.password.length < 6){
+        alert('密码长度少于6位');
+        return false;
+      }
+      let api_login = {
         phone:this.phone,
-        yzm:this.yzm,
-        dxyzm:this.dxyzm
-      }).then(response=>{
-        if(response.body.status == 200 ){
-          sessionStorage.setItem('user_id',response.body.data.id);
-          sessionStorage.setItem('token',response.body.data.token);
-          this.$router.push({name:'ListNews'});
-        }else{
-          alert(response.data.msg);
-        }
-        console.log('success');
-        console.log('response');
+        password:this.password,
+        tt:2
+      };
+      this.$http.post('/api/logins',api_login).then(success=>{
+        alert(success.body.msg);
       },error=>{
-        console.log(error);
-      })
+        alert('登录失败，请重试');
+        // this.msg('登录失败，请重试');
 
-
-    },
-    dx:function () {
-      if(this.phone ==''){
-        alert('手机号不能为空');
-        return false
-      }
-      this.$http.post('/api/dx',{
-        phone:this.phone,
-      }).then(response=>{
-        if(response.body.status == 200 ){
-          alert('666');
-        }else{
-          alert(response.data.msg);
-        }
-      },error=>{
-        console.log(error);
       })
     }
+  },
+  mounted(){
+
   }
 }
 </script>
