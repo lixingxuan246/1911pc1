@@ -62,7 +62,7 @@
        <div carousel-item>
          <div>
            <p class="title">去南非旅行需要做什么准备</p>
-           <a href="list.html"><img src="@/assets/static/images/news_img1.jpg"></a>
+           <a href="list.html" ><img src="@/assets/static/images/news_img1.jpg"></a>
          </div>
          <div>
            <p class="title">去南非旅行需要做什么准备</p>
@@ -402,7 +402,7 @@
 <script>
   import "@/assets/layui/css/layui.css";
   import "@/assets/static/css/main.css";
-
+  import Common from "@/mixin/Common";
   export default {
         name: "index.vue",
     data () {
@@ -410,6 +410,7 @@
 
       }
     },
+    mixins:[ Common ],
     methods:{
       keji: function () {
         // 通过路由跳转的方式实现页面跳转
@@ -431,6 +432,7 @@
 
     },
     mounted(){
+          layui.layer.alert("页面加载完成")
           layui.use('index',function(){
             var index = layui.index;
             index.banner()
@@ -440,9 +442,7 @@
           layui.layer.alert(12345,{icon:6})
     }
 
-  
     }
-
 </script>
 
 <style scoped>

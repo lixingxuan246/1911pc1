@@ -70,7 +70,7 @@
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="text"  name="" lay-verify="required"  placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
+                <input type="text"  name="" lay-verify="required" v-model="user_code"  placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
                 <input type="button"  id="veriCodeBtn" name=""
                        v-if="sendMark"
                        @click="getMsgCode"  class="obtain layui-btn" :value="Timecode">
@@ -125,7 +125,7 @@
 
 
 <script>
-
+  import Common from "@/mixin/Common";
   import "@/assets/layui/layui.js"
   import "@/assets/layui/css/layui.css"
   import "@/assets/static/css/main.css"
@@ -145,10 +145,11 @@
         pwd1:''
       }
     },
+    mixins: [ Common ],
     methods:{
       login:function () {
         if(this.phone ==''){
-          alert('手机号不能为空');
+          this.alert('手机号不能为空');
           return false
         }
         if(this.yzm ==''){
@@ -159,21 +160,29 @@
           alert('短信验证码不能为空');
           return false
         }
-        this.$http.post('/api/login',{
+        if(this.pwd != this.pwd1 ){
+          alert('两次输入的密码不正确');
+        }
+        let data_reg={
           phone:this.phone,
-          yzm:this.yzm,
-          dxyzm:this.dxyzm
-        }).then(response=>{
-          if(response.body.status == 200 ){
-            sessionStorage.setItem('user_id',response.body.data.id);
-            sessionStorage.setItem('token',response.body.data.token);
-            this.$router.push({name:'ListNews'});
+
+          user_code:this.user_code,
+          pwd:this.pwd,
+          tt:1
+        }
+        this.$http.post('/api/login',data_reg).then(success=>{
+          if(success.body.status == 200 ){
+            alert("注册成功，请去登录吧")
+            sessionStorage.setItem('user_id',success.body.data.id);
+            sessionStorage.setItem('token',success.body.data.token);
+            this.$router.push({name:'LoginNews'});
           }else{
-            alert(response.data.msg);
+            alert(success.data.msg);
           }
           console.log('success');
           console.log('response');
         },error=>{
+          // alert('注册失败，请重试')
           console.log(error);
         })
 
