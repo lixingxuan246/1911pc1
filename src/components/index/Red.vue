@@ -62,8 +62,7 @@
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="text"  name="" lay-verify="required" id="imgCode"  placeholder="验证码" autocomplete="off" class="layui-input">
-                <img :src=img_code >
+
                 <input type="text"  name="" lay-verify="required" id="imgCode" v-model="user_img_code" placeholder="验证码" autocomplete="off" class="layui-input">
 <!--                <img src="https://fly.layui.com/auth/imagecode?t=1542856673772">-->
                 <img :src="img_code" @click="changeImgCode()">
@@ -72,8 +71,7 @@
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="text"  name="" lay-verify="required"  placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
-                <input type="button"  id="veriCodeBtn" name="" value="验证码"  class="obtain layui-btn">
+
                 <input type="text"  name="" lay-verify="required" v-model="user_code"  placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
                 <input type="button"  id="veriCodeBtn" name=""
                        v-if="sendMark"
@@ -87,13 +85,13 @@
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="password" name="" lay-verify="required|phone"   placeholder="请输入密码" autocomplete="off" class="layui-input">
+
                 <input type="password" name="" lay-verify="required|phone"  v-model="pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
-                <input type="password" name="" lay-verify="required|phone"   placeholder="确认密码" autocomplete="off" class="layui-input">
+
                 <input type="password" name="" lay-verify="required|phone"  v-model="pwd1" placeholder="确认密码" autocomplete="off" class="layui-input">
               </div>
             </div>
@@ -154,10 +152,7 @@
     },
     mixins: [ Common ],
     methods:{
-    },
-    mounted() {
 
-    }
       login:function () {
         if(this.phone ==''){
           this.alert('手机号不能为空');
