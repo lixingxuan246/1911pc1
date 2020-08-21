@@ -10,20 +10,20 @@
           </a>
         </h1>
         <p class="nav">
-          <route-lick @click="shouye()">首页</route-lick>
+          <a @click="shouye()">首页</a>
 <!--          <a href="index.html">最新</a>-->
 <!--          <a href="list.html" class="active">娱乐</a>-->
 <!--          <a href="list.html">生活</a>-->
 <!--          <a href="list.html">财经</a>-->
 <!--          <a href="list.html">科技</a>-->
 <!--          <a href="list.html">军事</a>-->
-          <route-lick @click="yule()">娱乐</route-lick>
-          <route-lick @click="shenghuo()">生活</route-lick>
-          <route-lick @click="caijing()">财经</route-lick>
+          <a @click="yule()">娱乐</a>
+          <a @click="shenghuo()">生活</a>
+          <a @click="caijing()">财经</a>
 
           <!--         <a href="list.html">科技</a>-->
-          <route-lick @click="keji()">科技</route-lick>
-          <route-lick @click="junshi()">军事</route-lick>
+          <a @click="keji()">科技</a>
+          <a @click="junshi()">军事</a>
         </p>
         <div class="search-bar">
           <form class="layui-form" action="">
