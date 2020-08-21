@@ -8,6 +8,8 @@ import Index from "@/components/index/Index";
 import Details from "@/components/index/Details";
 import Search from "@/components/index/Search";
 import Red from "@/components/index/Red";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 
 Vue.use(Router)
