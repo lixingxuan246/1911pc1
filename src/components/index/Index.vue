@@ -12,13 +12,13 @@
        <p class="nav">
          <a href="index.html" class="active">最新</a>
 <!--         <a href="list.html">娱乐</a>-->
-         <route-lick @click="yule()">娱乐</route-lick>
-         <route-lick @click="shenghuo()">生活</route-lick>
-         <route-lick @click="caijing()">财经</route-lick>
+         <a @click="yule()">娱乐</a>
+         <a @click="shenghuo()">生活</a>
+         <a @click="caijing()">财经</a>
 
 <!--         <a href="list.html">科技</a>-->
-         <route-lick @click="keji()">科技</route-lick>
-         <route-lick @click="junshi()">军事</route-lick>
+         <a @click="keji()">科技</a>
+         <a @click="junshi()">军事</a>
 
        </p>
        <div class="search-bar">
@@ -432,14 +432,14 @@
 
     },
     mounted(){
-          layui.layer.alert("页面加载完成")
+          // layui.layer.alert("页面加载完成")
           layui.use('index',function(){
             var index = layui.index;
             index.banner()
             index.seachBtn()
             index.arrowutil()
           });
-          layui.layer.alert(12345,{icon:6})
+        layer.alert(12345,{icon:6})
     }
 
     }
