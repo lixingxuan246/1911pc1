@@ -154,10 +154,7 @@
     },
     mixins: [ Common ],
     methods:{
-    },
-    mounted() {
-
-    }
+    
       login:function () {
         if(this.phone ==''){
           this.alert('手机号不能为空');
