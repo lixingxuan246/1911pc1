@@ -34,8 +34,6 @@
                   <div class="b-txt">
                     <span class="label">娱乐</span>
                     <span class="icon message">
-
-   <div class="micronews">
    <div class="micronews-header-wrap">
      <div class="micronews-header w1000 layui-clear">
        <h1 class="logo">
@@ -47,13 +45,13 @@
        <p class="nav">
          <a href="index.html" class="active">最新</a>
 <!--         <a href="list.html">娱乐</a>-->
-         <route-lick @click="yule()">娱乐</route-lick>
-         <route-lick @click="shenghuo()">生活</route-lick>
-         <route-lick @click="caijing()">财经</route-lick>
+         <a @click="yule()">娱乐</a>
+         <a @click="shenghuo()">生活</a>
+         <a @click="caijing()">财经</a>
 
 <!--         <a href="list.html">科技</a>-->
-         <route-lick @click="keji()">科技</route-lick>
-         <route-lick @click="junshi()">军事</route-lick>
+         <a @click="keji()">科技</a>
+         <a @click="junshi()">军事</a>
 
        </p>
        <div class="search-bar">
@@ -429,8 +427,6 @@
        </div>
      </div>
    </div>
-
-<<<<<<< HEAD
  </div>
 
   <div class="micronews-footer-wrap">
@@ -454,8 +450,6 @@
       </div>
     </div>
     </div>
-=======
->>>>>>> sjp
   </div>
 </template>
 
@@ -463,21 +457,16 @@
 <script>
   import "@/assets/layui/css/layui.css";
   import "@/assets/static/css/main.css";
-<<<<<<< HEAD
   import Common from "@/mixin/Common";
-=======
   import MyHeader from "@/components/Header"
   import MyFooter from "@/components/Footer.vue";
->>>>>>> sjp
   export default {
-        name: "Index",
         name: "index.vue",
     data () {
       return {
 
       }
     },
-<<<<<<< HEAD
     mixins:[ Common ],
     methods:{
       keji: function () {
@@ -498,28 +487,19 @@
       }
 
 
-=======
     components:{
       MyHeader:MyHeader,
       MyFooter:MyFooter
->>>>>>> sjp
     },
     mounted(){
-
-      // layui.use('index',function(){
-      //   var index = layui.index;
-      //   index.banner()
-      //   index.seachBtn()
-      //   index.arrowutil()
-      // });
-          layui.layer.alert("页面加载完成")
+          // layui.layer.alert("页面加载完成")
           layui.use('index',function(){
             var index = layui.index;
             index.banner()
             index.seachBtn()
             index.arrowutil()
           });
-          layui.layer.alert(12345,{icon:6})
+        layer.alert(12345,{icon:6})
     }
 
     }

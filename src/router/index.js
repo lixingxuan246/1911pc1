@@ -5,21 +5,38 @@ import LoginNews from "@/components/login/LoginNews"
 import ListNews from "@/components/list/ListNews"
 import PersinfoNews from "@/components/persinfo/PersinfoNews"
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Index from "@/components/index/Index";
 import Details from "@/components/index/Details";
 import Search from "@/components/index/Search";
 import Red from "@/components/index/Red";
 <<<<<<< HEAD
 =======
+
+
+
+
+
+
+>>>>>>> 5829f7948bc07af1643b1499876b0977024551b5
+=======
+>>>>>>> lxx
 import Index from "@/components/index/Index"
 import Details from "@/components/index/Details"
 import Search from "@/components/index/Search"
 import Red from '@/components/index/Red'
+<<<<<<< HEAD
 >>>>>>> 4073da5869139607efc2448a79dce36ef127885b
 =======
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 >>>>>>> sjp
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> lxx
+>>>>>>> 5829f7948bc07af1643b1499876b0977024551b5
 
 
 Vue.use(Router)
@@ -47,6 +64,9 @@ export default new Router({
       name: 'PersinfoNews',
       component: PersinfoNews
 <<<<<<< HEAD
+
+=======
+>>>>>>> lxx
     },
     {
       path: '/news/index',
@@ -62,11 +82,13 @@ export default new Router({
       path: '/news/search',
       name: 'Search',
       component: Search
+<<<<<<< HEAD
     },
     {
-      path: '/Red',
+    
 =======
     },{
+>>>>>>> lxx
       path: '/index',
       name: 'Index',
       component: Index
@@ -80,7 +102,6 @@ export default new Router({
       component: Details
     },{
 	    path: '/Red',
->>>>>>> 4073da5869139607efc2448a79dce36ef127885b
       name: 'Red',
       component: Red
     },
