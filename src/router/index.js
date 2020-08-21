@@ -9,12 +9,17 @@ import Index from "@/components/index/Index";
 import Details from "@/components/index/Details";
 import Search from "@/components/index/Search";
 import Red from "@/components/index/Red";
+<<<<<<< HEAD
 =======
 import Index from "@/components/index/Index"
 import Details from "@/components/index/Details"
 import Search from "@/components/index/Search"
 import Red from '@/components/index/Red'
 >>>>>>> 4073da5869139607efc2448a79dce36ef127885b
+=======
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+>>>>>>> sjp
 
 
 Vue.use(Router)

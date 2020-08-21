@@ -1,54 +1,6 @@
 <template>
   <div class="micronews">
-  <div class="micronews-header-wrap">
-    <div class="micronews-header w1000 layui-clear">
-      <h1 class="logo">
-        <a href="index.html">
-          <img src="@/assets/static/images/LOGO.png" alt="logo">
-          <span class="layui-hide">LOGO</span>
-        </a>
-      </h1>
-      <p class="nav">
-        <a href="index.html" class="active">最新</a>
-        <a href="list.html">娱乐</a>
-        <a href="list.html">生活</a>
-        <a href="list.html">财经</a>
-        <a href="list.html">科技</a>
-        <a href="list.html">军事</a>
-      </p>
-      <div class="search-bar">
-        <form class="layui-form" action="">
-          <div class="layui-form-item">
-            <div class="layui-input-block">
-              <input type="text" name="title" placeholder="搜索你要的内容" autocomplete="off" class="layui-input">
-              <button class="layui-btn search-btn"  formnovalidate><i class="layui-icon layui-icon-search"></i></button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="login">
-        <a href="login.html">
-          登录
-        </a>
-        <!-- <a href="login.html"> -->
-        <!-- <img src="@/assets/static/images/header.png" style="width: 36px; height: 36px;"> -->
-        <!-- </a> -->
-      </div>
-      <div class="menu-icon">
-        <i class="layui-icon layui-icon-more-vertical"></i>
-      </div>
-      <div class="mobile-nav">
-        <ul class="layui-nav" lay-filter="">
-          <li class="layui-nav-item layui-this"><a href="index.html">最新</a></li>
-          <li class="layui-nav-item"><a href="list.html">娱乐</a></li>
-          <li class="layui-nav-item"><a href="list.html">生活</a></li>
-          <li class="layui-nav-item"><a href="list.html">财经</a></li>
-          <li class="layui-nav-item"><a href="list.html">科技</a></li>
-          <li class="layui-nav-item"><a href="list.html">军事</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <my-header></my-header>
 
 
   <div class="layui-fulid micronews-banner w1000">
@@ -454,6 +406,7 @@
      </div>
    </div>
 
+<my-footer></my-footer>
 
    <div class="micronews-footer-wrap">
      <div class="micronews-footer w1000">
@@ -477,6 +430,7 @@
      </div>
    </div>
 
+<<<<<<< HEAD
  </div>
 
   <div class="micronews-footer-wrap">
@@ -500,6 +454,8 @@
       </div>
     </div>
     </div>
+=======
+>>>>>>> sjp
   </div>
 </template>
 
@@ -507,7 +463,12 @@
 <script>
   import "@/assets/layui/css/layui.css";
   import "@/assets/static/css/main.css";
+<<<<<<< HEAD
   import Common from "@/mixin/Common";
+=======
+  import MyHeader from "@/components/Header"
+  import MyFooter from "@/components/Footer.vue";
+>>>>>>> sjp
   export default {
         name: "Index",
         name: "index.vue",
@@ -516,6 +477,7 @@
 
       }
     },
+<<<<<<< HEAD
     mixins:[ Common ],
     methods:{
       keji: function () {
@@ -536,6 +498,11 @@
       }
 
 
+=======
+    components:{
+      MyHeader:MyHeader,
+      MyFooter:MyFooter
+>>>>>>> sjp
     },
     mounted(){
 
