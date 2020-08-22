@@ -55,7 +55,7 @@
   import "@/assets/static/css/main.css"
   import Common from '@/mixins/common.js'
   import MyHeader from "@/components/Header"
-  import MyFooter from "@/components/Footer.vue";
+  import MyFooter from "@/components/Footer.vue"
   export default {
   name: 'LoginNews',
   data () {

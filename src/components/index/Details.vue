@@ -244,7 +244,7 @@
 
 
     <my-footer></my-footer>
-
+</div>
   </div>
 </template>
 
@@ -255,6 +255,10 @@
   import MyFooter from "@/components/Footer.vue";
     export default {
         name: "Detaile.vue",
+        components:{
+        MyHeader:MyHeader,
+        MyFooter:MyFooter
+      },
       data(){
           return {
 
@@ -285,12 +289,6 @@
       },
     }
 
-
-      components:{
-        MyHeader:MyHeader,
-        MyFooter:MyFooter
-      },
-    }
 
 </script>
 

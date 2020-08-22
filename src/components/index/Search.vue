@@ -1,6 +1,5 @@
 <template>
     <div class="micronews">
-<<<<<<< HEAD
       <div class="micronews-header-wrap">
         <div class="micronews-header w1000 layui-clear">
           <h1 class="logo">
@@ -59,9 +58,7 @@
           </div>
         </div>
       </div>
-=======
       <my-header></my-header>
->>>>>>> sjp
 
       <div class="micronews-container micronews-search-container w1000">
         <div class="layui-fluid">
@@ -106,41 +103,37 @@
   import MyHeader from "@/components/Header"
   import MyFooter from "@/components/Footer.vue";
     export default {
-        name: "Search.vue",
-<<<<<<< HEAD
-      data(){
-          return {
-
-          }
+      name: "Search.vue",
+      data() {
+        return {}
       },
-      methods:{
+      methods: {
         keji: function () {
           // 通过路由跳转的方式实现页面跳转
           this.$router.push({name: 'Search'})
         },
-        yule: function(){
+        yule: function () {
           this.$router.push({name: 'ListNews'})
         },
-        shenghuo:function(){
+        shenghuo: function () {
           this.$router.push({name: 'PersinfoNews'})
         },
-        junshi:function(){
+        junshi: function () {
           this.$router.push({name: 'PersinfoNews'})
         },
-        caijing:function(){
+        caijing: function () {
           this.$router.push({name: 'Details'})
         },
-   shouye:function(){
-     this.$router.push({name:'Index'})
-   },
+        shouye: function () {
+          this.$router.push({name: 'Index'})
+        },
 
 
-=======
-      components:{
-        MyHeader:MyHeader,
-        MyFooter:MyFooter
->>>>>>> sjp
-      },
+        components: {
+          MyHeader: MyHeader,
+          MyFooter: MyFooter
+        },
+      }
     }
 </script>
 

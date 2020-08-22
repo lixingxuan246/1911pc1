@@ -1,7 +1,5 @@
 <template>
   <div class="micronews">
-
-<<<<<<< HEAD
         <div class="micronews-header-wrap">
           <div class="micronews-header w1000 layui-clear">
             <h1 class="logo">
@@ -60,9 +58,9 @@
             </div>
           </div>
         </div>
-=======
+
         <my-header></my-header>
->>>>>>> sjp
+
 
 
         <div class="micronews-persInfo-wrap">
