@@ -59,8 +59,6 @@
       </div>
     </div>
 
-  <div class="micronews">
-<my-header></my-header>
 
     <div class="micronews-container micronews-details-container w1000">
       <div class="layui-fluid">
@@ -242,27 +240,24 @@
 
 
 
-
     <my-footer></my-footer>
-</div>
   </div>
 </template>
 
 <script>
   import "@/assets/layui/css/layui.css";
   import "@/assets/static/css/main.css";
-  import MyHeader from "@/components/Header"
+  import MyHeader from "@/components/Header";
   import MyFooter from "@/components/Footer.vue";
     export default {
         name: "Detaile.vue",
-        components:{
-        MyHeader:MyHeader,
-        MyFooter:MyFooter
-      },
       data(){
           return {
-
           }
+      },
+      components:{
+        MyHeader:MyHeader,
+        MyFooter:MyFooter
       },
       methods:{
           shouye:function(){

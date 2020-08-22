@@ -10,8 +10,6 @@ import Search from "@/components/index/Search"
 import Red from "@/components/index/Red"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-
-
 Vue.use(Router)
 
 export default new Router({
@@ -53,7 +51,7 @@ export default new Router({
       component: Search
     },
     {
-      path: '/Red',
+      path:'/Red',
       name: 'Red',
       component: Red
     },
