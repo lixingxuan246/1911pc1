@@ -8,12 +8,16 @@
         </a>
       </h1>
       <p class="nav">
-        <a href="index.html" class="active">最新</a>
-        <a href="list.html">娱乐</a>
-        <a href="list.html">生活</a>
-        <a href="list.html">财经</a>
-        <a href="list.html">科技</a>
-        <a href="list.html">军事</a>
+<!--        <a href="index.html" class="active">最新</a>-->
+        <a @click="shouye()">首页</a>
+
+        <a @click="yule()">娱乐</a>
+        <a @click="shenghuo()">生活</a>
+        <a @click="caijing()">财经</a>
+
+        <!--         <a href="list.html">科技</a>-->
+        <a @click="keji()">科技</a>
+        <a @click="junshi()">军事</a>
       </p>
       <div class="search-bar">
         <form class="layui-form" action="">
@@ -56,7 +60,30 @@
       data(){
           return {
          }
-      }
+      },
+      methods:{
+        keji: function () {
+          // 通过路由跳转的方式实现页面跳转
+          this.$router.push({name: 'Search'})
+        },
+        yule: function(){
+          this.$router.push({name: 'ListNews'})
+        },
+        shenghuo:function(){
+          this.$router.push({name: 'PersinfoNews'})
+        },
+        junshi:function(){
+          this.$router.push({name: 'PersinfoNews'})
+        },
+        caijing:function(){
+          this.$router.push({name: 'Details'})
+        },
+        shouye:function(){
+          this.$router.push({name:'Index'})
+        },
+
+
+      },
     }
 </script>
 
