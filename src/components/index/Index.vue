@@ -346,32 +346,16 @@
      },
     mixins:[ Common ],
     methods:{
-      keji: function () {
-        // 通过路由跳转的方式实现页面跳转
-        this.$router.push({name: 'Search'})
-      },
-      yule: function(){
-        this.$router.push({name: 'ListNews'})
-      },
-      shenghuo:function(){
-        this.$router.push({name: 'PersinfoNews'})
-      },
-      junshi:function(){
-        this.$router.push({name: 'PersinfoNews'})
-      },
-      caijing:function(){
-        this.$router.push({name: 'Details'})
-      }
 
     },
     mounted(){
 
-      // layui.use('index',function(){
-      //   var index = layui.index;
-      //   index.banner()
-      //   index.seachBtn()
-      //   index.arrowutil()
-      // });
+      layui.use('index',function(){
+        var index = layui.index;
+        index.banner()
+        index.seachBtn()
+        index.arrowutil()
+      });
     }
   }
 </script>
