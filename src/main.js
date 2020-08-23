@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 
+
 Vue.use(VueResource)
 // 确保post请求不会被转换为 options 请求
 Vue.http.options.emulateJSON = true
