@@ -366,12 +366,12 @@
     },
     mounted(){
 
-      // layui.use('index',function(){
-      //   var index = layui.index;
-      //   index.banner()
-      //   index.seachBtn()
-      //   index.arrowutil()
-      // });
+      layui.use('index',function(){
+        var index = layui.index;
+        index.banner()
+        index.seachBtn()
+        index.arrowutil()
+      });
     }
   }
 </script>
