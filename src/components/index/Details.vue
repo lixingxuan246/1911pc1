@@ -107,13 +107,24 @@
 <!--                  <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>-->
 
                   <div class="bdsharebuttonbox">
+<<<<<<< HEAD
                     <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="sqq" title="分享到QQ好友"></a>
                     <a href="#" class="icon layui-icon layui-icon-login-qq" data-cmd="qzone" title="分享到QQ空间"></a>
                     <a href="#" class="icon layui-icon layui-icon-login-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+=======
+                    <a href="#" class="icon layui-icon layui-icon-login-qq" data-cmd="sqq" title="分享到QQ好友"></a>
+                    <a href="#" class="icon layui-icon layui-icon-login-qq" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a href="#" class="icon layui-icon layui-icon-login-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+                    
+                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="weixin" title="分享到微信"></a>
+                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="douban" title="分享到豆瓣网"></a>
+                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="more" title="更多"></a>
+>>>>>>> lxx
                   </div>
                   <button class="layui-btn Collection">
                     ❤<span>已收藏</span>
                   </button>
+
                 </div>
               </div>
               <div class="leave-message" id="message">
@@ -301,7 +312,11 @@
             "share":{},
             "selectShare":{
               "bdContainerClass":null,
+<<<<<<< HEAD
               "bdSelectMiniList":["sqq","qzone","tsina"]
+=======
+              "bdSelectMiniList":["sqq","qzone","tsina","renren","weixin","tqq","douban","more"]
+>>>>>>> lxx
             }
           };
           const s = document.createElement('script');

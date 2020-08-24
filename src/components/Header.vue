@@ -8,7 +8,11 @@
         </a>
       </h1>
       <p class="nav">
+<<<<<<< HEAD
 <!--        <a href="index.html" class="active">最新</a>-->
+=======
+
+>>>>>>> lxx
         <a @click="shouye()">首页</a>
 
         <a @click="yule()">娱乐</a>

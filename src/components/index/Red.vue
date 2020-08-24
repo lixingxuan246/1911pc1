@@ -127,7 +127,7 @@
     name: 'LoginNews',
     data () {
       return {
-          img_code:'http://api4.mazhanliang.top/reg/imgcode',
+          img_code:'http://api4.mazhanliang.top/getImgUrl',
       }
     },
     components:{
