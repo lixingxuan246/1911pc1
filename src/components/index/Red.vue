@@ -19,7 +19,12 @@
                 <img :src="img_code" @click="changeImgCode()">
               </div>
             </div>
-
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <input type="text"  name="" lay-verify="required" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
+                <input type="button"  id="veriCodeBtn" name="" value="验证码" class="obtain layui-btn">
+              </div>
+            </div>
 
 
             <div class="layui-form-item">
@@ -87,7 +92,7 @@
           user_code:'',
           MsgCode:'验证码',
           pwd:'',
-          pwd1:''
+          pwd1:'',
       }
     },
     components:{

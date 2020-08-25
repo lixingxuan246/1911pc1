@@ -55,6 +55,5 @@ export default new Router({
       name: 'Red',
       component: Red
     },
-
   ]
 })
