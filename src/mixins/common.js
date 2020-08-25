@@ -1,15 +1,17 @@
 export default {
   methods:{
     alert:function ( msg ) {
-        layui.layer.alert(msg);
+      layui.layer.alert(msg);
       return false;
     },
     msg:function ( msg ) {
       layui.layer.open(
         {
-          type:1,
+          type: 0,
+          // skin: 'layui-layer-rim',
+          // area: ['200px','60px'],
           content:msg,
-          shade:[0,3,'#393D49']
+          shade:[0.8,'#393D49']
         }
       );
       return false;

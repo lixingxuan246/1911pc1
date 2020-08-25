@@ -72,26 +72,17 @@
   methods:{
     login:function () {
       if(this.phone == ''){
-        alert('请输入手机号')
-        // this.alert('请输入手机号');
+        this.alert('请输入手机号');
+      }
+      if( this.checkPhone(this.phone) == false){
+        this.msg('手机号码格式不正确');
         return false;
       }
-      let reg = /^1{1}\d{10}$/;
-      if(!reg.test(this.phone)){
-        alert('手机号码格式不正确');
-        return false;
-      }
-      // if( this.(this.phone)){
-        // this.msg('手机号码格式不正确');
-        // return false;
-      // }
       if(this.password == ''){
-        alert('请输入密码');
-        // this.msg('请输入密码');
-        return false;
+        this.alert('请输入密码');
       }
       if(this.password.length < 6){
-        alert('密码长度少于6位');
+        this.alert('密码长度少于6位');
         return false;
       }
       let api_login = {
@@ -100,16 +91,19 @@
         tt:2
       };
       this.$http.post('/api/logins',api_login).then(success=>{
-        alert(success.body.msg);
+        this.alert(success.body.msg);
       },error=>{
-        alert('登录失败，请重试');
-        // this.msg('登录失败，请重试');
-
+        this.msg('登录失败，请重试');
       })
     }
   },
   mounted(){
-
+    layui.use('index',function(){
+      var index = layui.index;
+      index.banner()
+      index.seachBtn()
+      index.arrowutil()
+    });
   }
 }
 </script>
