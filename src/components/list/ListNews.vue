@@ -168,6 +168,8 @@
 
     mounted(){
       this.$http.post('/api/newsList').then(respnose => {
+        // console.log('1');
+        // return false;
         console.log(respnose.body.data);
         if (respnose.body.status == 200) {
           this.page++;

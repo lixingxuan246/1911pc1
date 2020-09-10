@@ -27,6 +27,7 @@
          <div class="layui-col-xs12 layui-col-sm12 layui-col-md8">
            <div class="main">
              <div class="list-item" id="LAY_demo2">
+<<<<<<< HEAD
                <div class="item"  v-for="(v,k) in news_list">
                  <a @click="details()">
 <!--                   <img src="@/assets/static/images/news_img11.jpg">-->
@@ -36,6 +37,15 @@
                  </a>
                  <div class="item-info">
                    <h4><a href="details.html">{{v.name}} </a></h4>
+=======
+
+               <div class="item">
+                 <a href="details.html">
+                   <img :src="studentImg"  style="width:100px; height:130px">
+                 </a>
+                 <div class="item-info" v-for="(v,k) in new_list">
+                   <h4><a href="details.html">{{v.name}}</a></h4>
+>>>>>>> 27a09c0b33208a654416dac449555ce7e300c265
                    <div class="b-txt">
                      <span class="label">娱乐</span>
                      <span class="icon message">
@@ -49,26 +59,11 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="item">
                   <a href="details.html">
-                    <img src="@/assets/static/images/news_img12.jpg">
+                    <img src="@/assets/static/images/204542.jpg" width="100px" height="30px">
                   </a>
-                  <div class="item-info">
-                    <h4><a href="details.html">渝广快速一车上万件快递全被烧光，双11战果泡汤</a></h4>
-                    <div class="b-txt">
-                      <span class="label">娱乐</span>
-                      <span class="icon message">
-                      <i class="layui-icon layui-icon-dialogue"></i>
-                      500条
-                    </span>
-                      <span class="icon time">
-                      <i class="layui-icon layui-icon-log"></i>
-                      10分钟前
-                    </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
                   <div class="item-info">
                     <h4><a href="details.html">渝广快速一车上万件快递全被烧光，双11战果泡汤</a></h4>
                     <div class="b-txt">
@@ -305,8 +300,14 @@
     name: "Index",
     data () {
       return {
+<<<<<<< HEAD
         news_list:[],
 
+=======
+        // 图片路径
+        studentImg: require('@/assets/static/images/11111.jpg'),
+        new_list:[],
+>>>>>>> 27a09c0b33208a654416dac449555ce7e300c265
       }
     },
     components:{
@@ -319,6 +320,7 @@
         this.$router.push({name:'Details'})
       },
     },
+<<<<<<< HEAD
     mounted(){
       this.$http.post('/api/aa').then((response) => {
         console.log(response.body)
@@ -328,7 +330,17 @@
         }
 
       )
+=======
+>>>>>>> 27a09c0b33208a654416dac449555ce7e300c265
 
+    mounted(){
+      this.$http.post('/api/aa').then((response) => {
+        // this.new_list=respnose.res;
+        console.log(respnose.body.data);
+        // console.log('success')
+      }, (error) => {
+        console.log(error)
+      })
       layui.use('index',function(){
         var index = layui.index;
         index.banner()
