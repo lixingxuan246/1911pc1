@@ -38,28 +38,26 @@
                 <p class="mt30">大连万达集团的官网上曾在2015年7月9日发表过一篇关于洛杉矶比弗利山项目的报道。当时引用了《洛杉矶时报》的报道称，该报对万达集团这一新项目给予了积极的评价，“万达洛杉矶比弗利山项目将作为其进军好莱坞重要的第一步，有望帮助中国进入好莱坞的电影业，并在国际范围推广中国文化。”</p>
                 <div class="share-title">
                   <span class="txt">分享:</span>
-<!--                  <a href="#">-->
-<!--                    <i class="icon layui-icon layui-icon-login-wechat"></i>-->
-<!--                  </a>-->
-<!--                  <a href="#">-->
-<!--                    <i class="icon layui-icon layui-icon-login-weibo"></i>-->
-<!--                  </a>-->
-<!--                  <a href="#">-->
-<!--                    <i class="icon layui-icon layui-icon-login-qq"  ></i>-->
-<!--                  </a>-->
-<!--                  <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>-->
-
                   <div class="bdsharebuttonbox">
-
-                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="sqq" title="分享到QQ好友"></a>
-                    <a href="#" class="icon layui-icon layui-icon-login-qq" data-cmd="qzone" title="分享到QQ空间"></a>
-                    <a href="#" class="icon layui-icon layui-icon-login-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
-
-                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="weixin" title="分享到微信"></a>
-                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="douban" title="分享到豆瓣网"></a>
-                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="more" title="更多"></a>
-
+                    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="bds_more" data-cmd="more" title="更多"></a>
                   </div>
+
+
+                  <!--                    data-cmd 是分享目录标识-->
+                  <!--                  <div class="bdsharebuttonbox">-->
+
+<!--                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="sqq" title="分享到QQ好友"></a>-->
+<!--                    <a href="#" class="icon layui-icon layui-icon-login-qq" data-cmd="qzone" title="分享到QQ空间"></a>-->
+<!--                    <a href="#" class="icon layui-icon layui-icon-login-weibo" data-cmd="tsina" title="分享到新浪微博"></a>-->
+
+<!--                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="weixin" title="分享到微信"></a>-->
+<!--                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="douban" title="分享到豆瓣网"></a>-->
+<!--                    <a href="#" class="icon layui-icon layui-icon-login-wechat" data-cmd="more" title="更多"></a>-->
+
+<!--                  </div>-->
                   <button class="layui-btn Collection">
                     ❤<span>已收藏</span>
                   </button>
@@ -236,6 +234,32 @@
         caijing:function(){
           this.$router.push({name: 'Details'})
         },
+        // setShare(){
+        //   //分享相关代码
+        //   window._bd_share_config={
+        //     "common":{
+        //       "bdSnsKey":{},
+        //       "bdText":"",
+        //       "bdMini":"1",
+        //       "bdMiniList":false,
+        //       "bdPic":"",
+        //       "bdStyle":"1",
+        //       "bdSize":"24"
+        //     },
+        //     "share":{},
+        //     "selectShare":{
+        //       "bdContainerClass":null,
+        //       "bdSelectMiniList":["sqq","qzone","tsina","renren","weixin","tqq","douban","more"]
+        //     }
+        //   };
+        //   const s = document.createElement('script');
+        //   s.type = 'text/javascript';
+        //   s.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5);
+        //   document.body.appendChild(s);
+        //
+        // },
+
+
         setShare(){
           //分享相关代码
           window._bd_share_config={
@@ -251,7 +275,7 @@
             "share":{},
             "selectShare":{
               "bdContainerClass":null,
-              "bdSelectMiniList":["sqq","qzone","tsina","renren","weixin","tqq","douban","more"]
+              "bdSelectMiniList":["sqq","qzone","tsina","more"]
             }
           };
           const s = document.createElement('script');
@@ -263,7 +287,6 @@
 
 
 
-
       },
 
       mounted: function(){
@@ -271,6 +294,7 @@
         setTimeout(()=>{
           that.setShare()
         },0)
+
       },
     }
 

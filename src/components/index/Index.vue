@@ -27,12 +27,15 @@
          <div class="layui-col-xs12 layui-col-sm12 layui-col-md8">
            <div class="main">
              <div class="list-item" id="LAY_demo2">
-               <div class="item">
-                 <a href="details.html">
-                   <img src="@/assets/static/images/news_img11.jpg">
+               <div class="item"  v-for="(v,k) in news_list">
+                 <a @click="details()">
+<!--                   <img src="@/assets/static/images/news_img11.jpg">-->
+                   <img :src="v.news_img"  width="100px" height="100px">
+<!--                   {{v.news_img}}-->
+
                  </a>
                  <div class="item-info">
-                   <h4><a href="details.html">北京的卫生部门调查五星级酒店清洁 “丑闻” 已现场取样，还消费者真相</a></h4>
+                   <h4><a href="details.html">{{v.name}} </a></h4>
                    <div class="b-txt">
                      <span class="label">娱乐</span>
                      <span class="icon message">
@@ -85,40 +88,22 @@
                   <a href="details.html">
                     <img src="@/assets/static/images/news_img13.jpg">
                   </a>
-                  <div class="item-info">
-                    <h4><a href="details.html">教育部发布教师职业行为十项准则</a></h4>
-                    <div class="b-txt">
-                      <span class="label">财经</span>
-                      <span class="icon message">
-                      <i class="layui-icon layui-icon-dialogue"></i>
-                      500条
-                    </span>
-                      <span class="icon time">
-                      <i class="layui-icon layui-icon-log"></i>
-                      10分钟前
-                    </span>
-                    </div>
-                  </div>
+<!--                  <div class="item-info">-->
+<!--                    <h4><a href="details.html">教育部发布教师职业行为十项准则</a></h4>-->
+<!--                    <div class="b-txt">-->
+<!--                      <span class="label">财经</span>-->
+<!--                      <span class="icon message">-->
+<!--                      <i class="layui-icon layui-icon-dialogue"></i>-->
+<!--                      500条-->
+<!--                    </span>-->
+<!--                      <span class="icon time">-->
+<!--                      <i class="layui-icon layui-icon-log"></i>-->
+<!--                      10分钟前-->
+<!--                    </span>-->
+<!--                    </div>-->
+<!--                  </div>-->
                 </div>
-                <div class="item">
-                  <a href="details.html">
-                    <img src="@/assets/static/images/news_img14.jpg">
-                  </a>
-                  <div class="item-info">
-                    <h4><a href="details.html">赵丽颖婚后首部电视剧开播！刚开场剧情相当惊险谍战大片的感觉！</a></h4>
-                    <div class="b-txt">
-                      <span class="label">娱乐</span>
-                      <span class="icon message">
-                      <i class="layui-icon layui-icon-dialogue"></i>
-                      500条
-                    </span>
-                      <span class="icon time">
-                      <i class="layui-icon layui-icon-log"></i>
-                      10分钟前
-                    </span>
-                    </div>
-                  </div>
-                </div>
+
                 <div class="item">
                   <div class="item-info">
                     <h4><a href="details.html">想要头发好只要不洗头？ 英国女子留1.83米长发自爆近20年没洗过</a></h4>
@@ -177,40 +162,22 @@
                   <a href="details.html">
                     <img src="@/assets/static/images/news_img9.jpg">
                   </a>
-                  <div class="item-info">
-                    <h4><a href="details.html">教育部发布教师职业行为十项准则</a></h4>
-                    <div class="b-txt">
-                      <span class="label">生活</span>
-                      <span class="icon message">
-                      <i class="layui-icon layui-icon-dialogue"></i>
-                      500条
-                    </span>
-                      <span class="icon time">
-                      <i class="layui-icon layui-icon-log"></i>
-                      10分钟前
-                    </span>
-                    </div>
-                  </div>
+<!--                  <div class="item-info">-->
+<!--                    <h4><a href="details.html">教育部发布教师职业行为十项准则</a></h4>-->
+<!--                    <div class="b-txt">-->
+<!--                      <span class="label">生活</span>-->
+<!--                      <span class="icon message">-->
+<!--                      <i class="layui-icon layui-icon-dialogue"></i>-->
+<!--                      500条-->
+<!--                    </span>-->
+<!--                      <span class="icon time">-->
+<!--                      <i class="layui-icon layui-icon-log"></i>-->
+<!--                      10分钟前-->
+<!--                    </span>-->
+<!--                    </div>-->
+<!--                  </div>-->
                 </div>
-                <div class="item">
-                  <a href="details.html">
-                    <img src="@/assets/static/images/news_img3.jpg">
-                  </a>
-                  <div class="item-info">
-                    <h4><a href="details.html">赵丽颖婚后首部电视剧开播！刚开场剧情相当惊险谍战大片的感觉！</a></h4>
-                    <div class="b-txt">
-                      <span class="label">娱乐</span>
-                      <span class="icon message">
-                      <i class="layui-icon layui-icon-dialogue"></i>
-                      500条
-                    </span>
-                      <span class="icon time">
-                      <i class="layui-icon layui-icon-log"></i>
-                      10分钟前
-                    </span>
-                    </div>
-                  </div>
-                </div>
+
                 <div class="item">
                   <a href="details.html">
                     <img src="@/assets/static/images/news_img11.jpg">
@@ -338,6 +305,8 @@
     name: "Index",
     data () {
       return {
+        news_list:[],
+
       }
     },
     components:{
@@ -346,9 +315,19 @@
      },
     mixins:[ Common ],
     methods:{
-
+      details:function(){
+        this.$router.push({name:'Details'})
+      },
     },
     mounted(){
+      this.$http.post('/api/aa').then((response) => {
+        console.log(response.body)
+          this.news_list = response.body;
+      },(error) => {
+        console.log(error)
+        }
+
+      )
 
       layui.use('index',function(){
         var index = layui.index;
