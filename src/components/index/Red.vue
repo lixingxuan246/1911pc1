@@ -1,8 +1,5 @@
 <template>
   <div class="micronews micronews-login">
-
-    <my-header></my-header>
-
     <div class="micronews-login-container">
       <div class="form-box">
         <h3>注册</h3>
@@ -17,23 +14,17 @@
               <div class="layui-input-block">
                 <input type="text"  name="" lay-verify="required" id="imgCode" v-model="user_img_code" placeholder="验证码" autocomplete="off" class="layui-input">
                 <img :src="img_code" @click="changeImgCode()">
-<<<<<<< HEAD
+
               </div>
             </div>
             <div class="layui-form-item">
               <div class="layui-input-block">
                 <input type="text"  name="" lay-verify="required" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
                 <input type="button"  id="veriCodeBtn" name="" value="验证码" class="obtain layui-btn">
-=======
->>>>>>> lxx
               </div>
             </div>
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> lxx
             <div class="layui-form-item">
               <div class="layui-input-block">
                 <input type="password" name="" lay-verify="required|phone"  v-model="pwd" placeholder="请输入密码" autocomplete="off" class="layui-input">
@@ -69,8 +60,6 @@
           </div>
         </div>
 
-
-
       </div>
     </div>
 
@@ -90,18 +79,7 @@
     name: 'LoginNews',
     data () {
       return {
-<<<<<<< HEAD
-          img_code:'http://api3.mazhanliang.top/getImgUrl',
-          phone:'',
-          user_img_code:'',
-          dxyzm:'',
-          sendMark:1,
-          Timecode:'验证码',
-          user_code:'',
-          MsgCode:'验证码',
-          pwd:'',
-          pwd1:'',
-=======
+
         img_code:'http://api3.mazhanliang.top/getImgUrl',
         phone:'',
         user_img_code:'',
@@ -111,8 +89,9 @@
         user_code:'',
         MsgCode:'验证码',
         pwd:'',
-        pwd1:''
->>>>>>> lxx
+        pwd1:'',
+
+
       }
     },
     components:{
